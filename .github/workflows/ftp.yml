@@ -1,0 +1,19 @@
+name: FTP Test
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    name: 🚀 Deploy website every commit
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🚚 Get latest code
+        uses: ruirezen/QK7sHVq73wfkDR2CSKbm
+      - name: 📂 Sync files
+        uses: ./
+        with:
+          server: ftp.ruirezende.com.br
+          username: ruirezen
+          password: ${{ secrets.ftp_password }}
