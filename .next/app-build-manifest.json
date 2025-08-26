@@ -16,15 +16,40 @@
       "static/chunks/main-app.js",
       "static/chunks/app/page.js"
     ],
+    "/quadro-personalizado/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/quadro-personalizado/page.js"
+    ],
+    "/acervo/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/acervo/page.js"
+    ],
     "/produto/[tipo]/[id]/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/produto/[tipo]/[id]/page.js"
     ],
-    "/pesquisa/page": [
+    "/cadastro/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/pesquisa/page.js"
+      "static/chunks/app/cadastro/page.js"
+    ],
+    "/imprensa/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/imprensa/page.js"
+    ],
+    "/clientes/layout": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/clientes/layout.js"
+    ],
+    "/clientes/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/clientes/page.js"
     ]
   }
 }

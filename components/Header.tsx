@@ -73,7 +73,7 @@ export function Header() {
 
         {/* Menu Desktop */}
         <nav className="hidden lg:flex items-center gap-4">
-          <Button variant="ghost" className="text-[#5A4A3A]" onClick={() => goTo("bio")}>BIO</Button>
+          <Button variant="ghost" className="text-[#5A4A3A]" onClick={() => goTo("bio")}>Sobre Rui</Button>
 
           {/* Dropdown LOJA */}
           <DropdownMenu>
@@ -105,40 +105,36 @@ export function Header() {
           </Button>
 
           {/* Dropdown CLIENTES */}
-          <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <Button variant="ghost" className="text-[#5A4A3A] flex items-center gap-1">
-                CLIENTES <ChevronDown className="h-4 w-4" />
-              </Button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent>
-              {sections.clientes.map((item, i) => (
-                <DropdownMenuItem key={i} onClick={() => goTo(item.id)}>
-                  {item.label}
-                </DropdownMenuItem>
-              ))}
-            </DropdownMenuContent>
-          </DropdownMenu>
+
+             <Link href="/clientes">
+            <Button
+              variant="ghost"
+              className={`text-[#5A4A3A] ${pathname === "/clientes" ? "bg-[#E6D7C3]/50" : ""}`}
+            >
+              Clientes
+            </Button>
+          </Link>
+          
 
           <Button variant="ghost" className="text-[#5A4A3A]" onClick={() => goTo("contato")}>
              FALE COM RUI
           </Button>
 
-          <Link href="/pesquisa">
+          {/* <Link href="/acervo">
             <Button
               variant="ghost"
-              className={`text-[#5A4A3A] ${pathname === "/pesquisa" ? "bg-[#E6D7C3]/50" : ""}`}
+              className={`text-[#5A4A3A] ${pathname === "/acervo" ? "bg-[#E6D7C3]/50" : ""}`}
             >
-              PESQUISA
+              ACERVO
             </Button>
-          </Link>
+          </Link> */}
 
 
-          <Link href="/cadastro">
+            {/* <Link href="/cadastro">
             <Button variant="outline" size="sm" className="border-[#8B9A6B] text-[#8B9A6B]">
               <UserPlus className="h-4 w-4 mr-2" /> Cadastre-se
             </Button>
-          </Link>
+          </Link> */}
 
           <ShoppingCartIcon />
         </nav>
@@ -157,7 +153,7 @@ export function Header() {
         <div className="lg:hidden bg-white border-t border-[#E6D7C3] shadow-lg">
           <nav className="px-4 py-2 space-y-2">
             <Button variant="ghost" className="w-full justify-start" onClick={() => goTo("bio")}>
-              BIO
+              Sobre Rui
             </Button>
 
             {/* Mobile Dropdown LOJA */}
@@ -221,10 +217,9 @@ export function Header() {
             <Button variant="ghost" className="w-full justify-start" onClick={() => goTo("contato")}>
                FALE COM RUI
             </Button>
-
-            <Link href="/pesquisa">
-              <Button variant="ghost" className="w-full justify-start">PESQUISA</Button>
-            </Link>
+           {/*  <Link href="/acervo">
+              <Button variant="ghost" className="w-full justify-start">ACERVO</Button>
+            </Link> */}
 
           </nav>
         </div>

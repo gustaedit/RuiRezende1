@@ -71,7 +71,7 @@ export const paintings = [
     title: "Vaqueiros em Movimento",
     price: "R$ 450,00",
     size: "40x60cm",
-    material: "Fine Art em papel algodão",
+    material: "",
     theme: "Cultura",
     location: "Sertão",
     image:
@@ -82,7 +82,7 @@ export const paintings = [
     title: "Vaqueiro Solitário",
     price: "R$ 380,00",
     size: "30x45cm",
-    material: "Fine Art em papel algodão",
+    material: "",
     theme: "Cultura",
     location: "Caatinga",
     image:
@@ -93,7 +93,7 @@ export const paintings = [
     title: "Galope no Sertão",
     price: "R$ 520,00",
     size: "50x70cm",
-    material: "Fine Art em papel algodão",
+    material: "",
     theme: "Movimento",
     location: "Bahia",
     image:
@@ -104,7 +104,7 @@ export const paintings = [
     title: "Sede no Sertão",
     price: "R$ 420,00",
     size: "40x60cm",
-    material: "Fine Art em papel algodão",
+    material: "",
     theme: "Vida",
     location: "Caatinga",
     image:
@@ -115,7 +115,7 @@ export const paintings = [
     title: "Reflexos da Manhã",
     price: "R$ 480,00",
     size: "45x65cm",
-    material: "Fine Art em papel algodão",
+    material: "",
     theme: "Paisagem",
     location: "Caatinga",
     image:
@@ -126,7 +126,7 @@ export const paintings = [
     title: "Cavalgada Selvagem",
     price: "R$ 550,00",
     size: "60x80cm",
-    material: "Fine Art em papel algodão",
+    material: "",
     theme: "Movimento",
     location: "Sertão",
     image:

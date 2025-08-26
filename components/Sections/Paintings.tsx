@@ -7,7 +7,6 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { ShoppingCart, ChevronLeft, ChevronRight, MessageCircle } from "lucide-react"
-import { CustomPaintingWizardNew } from "@/components/CustomPaintingWizardNew"
 
 interface Painting {
   id: string
@@ -26,7 +25,6 @@ interface PaintingsProps {
 
 export function PaintingsSection({ paintings }: PaintingsProps) {
   const router = useRouter()
-  const [showCustomWizard, setShowCustomWizard] = useState(false)
   const scrollContainerRef = useRef<HTMLDivElement>(null)
 
   const scrollLeft = () => {
@@ -86,45 +84,48 @@ export function PaintingsSection({ paintings }: PaintingsProps) {
                 className="group hover:shadow-xl transition-all duration-300 border-0 bg-white flex-shrink-0 w-[280px] snap-center cursor-pointer"
                 onClick={() => handlePaintingClick(painting.id)}
               >
-                <CardContent className="p-0">
-                  <div className="relative aspect-[3/4] overflow-hidden">
-                    <Image
-                      src={painting.image || "/placeholder.svg"}
-                      alt={`Quadro ${painting.title} - ${painting.theme} da ${painting.location}`}
-                      fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-300"
-                      sizes="280px"
-                      loading="lazy"
-                    />
-                  </div>
-                  <div className="p-4">
-                    <div className="flex items-center gap-2 mb-2">
-                      <Badge variant="secondary" className="bg-[#F5F2ED] text-[#5A4A3A] text-xs">
-                        {painting.theme}
-                      </Badge>
-                      <Badge variant="secondary" className="bg-[#F5F2ED] text-[#5A4A3A] text-xs">
-                        {painting.location}
-                      </Badge>
-                    </div>
-                    <h3 className="text-lg font-semibold mb-2 text-[#5A4A3A]">{painting.title}</h3>
-                    <p className="text-[#8B7355] mb-1 text-sm">{painting.size}</p>
-                    <p className="text-xs text-[#8B7355] mb-3">{painting.material}</p>
-                    <div className="flex items-center justify-between">
-                      <span className="text-lg font-bold text-[#8B9A6B]">{painting.price}</span>
-                      <Button
-                        size="sm"
-                        className="bg-[#8B9A6B] hover:bg-[#7A8A5A]"
-                        onClick={(e) => {
-                          e.stopPropagation()
-                          handlePaintingClick(painting.id)
-                        }}
-                      >
-                        <ShoppingCart className="h-3 w-3 mr-1" />
-                        Ver detalhes
-                      </Button>
-                    </div>
-                  </div>
-                </CardContent>
+         <CardContent className="p-0">
+  <div className="relative w-full overflow-hidden flex justify-center items-center bg-[#F5F2ED]">
+    <Image
+      src={painting.image || "/placeholder.svg"}
+      alt={`Quadro ${painting.title} - ${painting.theme} da ${painting.location}`}
+      width={0}
+      height={0}
+      sizes="100vw"
+      className="w-auto h-auto max-w-full max-h-[300px] object-contain transition-transform duration-300 group-hover:scale-105"
+      loading="lazy"
+    />
+  </div>
+
+  <div className="p-4">
+    <div className="flex items-center gap-2 mb-2">
+      <Badge variant="secondary" className="bg-[#F5F2ED] text-[#5A4A3A] text-xs">
+        {painting.theme}
+      </Badge>
+      <Badge variant="secondary" className="bg-[#F5F2ED] text-[#5A4A3A] text-xs">
+        {painting.location}
+      </Badge>
+    </div>
+    <h3 className="text-lg font-semibold mb-2 text-[#5A4A3A]">{painting.title}</h3>
+    <p className="text-[#8B7355] mb-1 text-sm">{painting.size}</p>
+    <p className="text-xs text-[#8B7355] mb-3">{painting.material}</p>
+    <div className="flex items-center justify-between">
+      <span className="text-lg font-bold text-[#8B9A6B]">{painting.price}</span>
+      <Button
+        size="sm"
+        className="bg-[#8B9A6B] hover:bg-[#7A8A5A]"
+        onClick={(e) => {
+          e.stopPropagation()
+          handlePaintingClick(painting.id)
+        }}
+      >
+        <ShoppingCart className="h-3 w-3 mr-1" />
+        Ver detalhes
+      </Button>
+    </div>
+  </div>
+</CardContent>
+
               </Card>
             ))}
           </div>
@@ -132,7 +133,7 @@ export function PaintingsSection({ paintings }: PaintingsProps) {
 
         <div className="text-center mt-8">
           <a
-            href="https://wa.me/5571999999999?text=Olá! Gostaria de falar com um consultor sobre quadros personalizados."
+            href="https://wa.me/+557199441318?text=Olá! Gostaria de falar com um consultor sobre quadros personalizados."
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block"
@@ -149,17 +150,15 @@ export function PaintingsSection({ paintings }: PaintingsProps) {
 
         <div className="text-center">
           <Button
-            size="lg"
-            variant="outline"
-            className="border-[#8B9A6B] text-[#5A4A3A] hover:bg-[#8B9A6B] hover:text-white bg-transparent"
-            onClick={() => setShowCustomWizard(true)}
-          >
-            Criar seu quadro personalizado
-          </Button>
+      size="lg"
+      variant="outline"
+      className="border-[#8B9A6B] text-[#5A4A3A] hover:bg-[#8B9A6B] hover:text-white bg-transparent"
+      onClick={() => router.push("/quadro-personalizado")} // 👈 redireciona
+    >
+      Criar seu quadro personalizado
+    </Button>
         </div>
       </div>
-
-      <CustomPaintingWizardNew isOpen={showCustomWizard} onClose={() => setShowCustomWizard(false)} />
     </section>
   )
 }

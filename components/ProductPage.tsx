@@ -49,12 +49,15 @@ export function ProductPage({ product, type, relatedProducts }: ProductPageProps
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
           {/* Galeria de imagens */}
           <div className="space-y-4">
-            <div className="relative aspect-square bg-white rounded-lg overflow-hidden shadow-lg">
+            {/* Imagem principal */}
+            <div className="relative w-full bg-white rounded-lg overflow-hidden shadow-lg flex justify-center items-center">
               <Image
                 src={productImages[selectedImage] || "/placeholder.svg"}
                 alt={type === "livro" ? product.name : product.title}
-                fill
-                className="object-cover"
+                width={0}
+                height={0}
+                sizes="100vw"
+                className="w-auto h-[400px] max-h-[600px] object-contain"
                 priority
               />
             </div>
@@ -69,7 +72,12 @@ export function ProductPage({ product, type, relatedProducts }: ProductPageProps
                     selectedImage === index ? "border-[#8B9A6B]" : "border-gray-200"
                   }`}
                 >
-                  <Image src={image || "/placeholder.svg"} alt={`Imagem ${index + 1}`} fill className="object-cover" />
+                  <Image
+                    src={image || "/placeholder.svg"}
+                    alt={`Imagem ${index + 1}`}
+                    fill
+                    className="object-cover"
+                  />
                 </button>
               ))}
             </div>
@@ -131,10 +139,6 @@ export function ProductPage({ product, type, relatedProducts }: ProductPageProps
                     <div className="flex justify-between">
                       <span className="text-[#8B7355]">Dimensões:</span>
                       <span className="font-medium text-[#5A4A3A]">{product.size}</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-[#8B7355]">Material:</span>
-                      <span className="font-medium text-[#5A4A3A]">{product.material}</span>
                     </div>
                     <div className="flex justify-between">
                       <span className="text-[#8B7355]">Tema:</span>
@@ -211,15 +215,18 @@ export function ProductPage({ product, type, relatedProducts }: ProductPageProps
               >
                 <CardContent className="p-0">
                   <Link href={`/produto/${type}/${relatedProduct.id}`}>
-                    <div className="relative aspect-square overflow-hidden">
+                    {/* Imagem relacionada sem crop */}
+                    <div className="relative w-full bg-white rounded-t-lg overflow-hidden flex justify-center items-center">
                       <Image
                         src={relatedProduct.image || "/placeholder.svg"}
                         alt={type === "livro" ? relatedProduct.name : relatedProduct.title}
-                        fill
-                        className="object-cover group-hover:scale-105 transition-transform duration-300"
+                        width={0}
+                        height={0}
                         sizes="280px"
+                        className="w-auto h-auto max-h-[250px] object-contain group-hover:scale-105 transition-transform duration-300"
                       />
                     </div>
+
                     <div className="p-4">
                       <h4 className="font-semibold text-[#5A4A3A] mb-2 line-clamp-2">
                         {type === "livro" ? relatedProduct.name : relatedProduct.title}

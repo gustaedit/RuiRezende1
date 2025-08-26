@@ -6,7 +6,7 @@ import { Input } from "@/components/ui/input"
 import { Badge } from "@/components/ui/badge"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog"
-import { Search, Filter, Grid3X3, List, X, Download, Palette, MapPin, Calendar, Tag } from 'lucide-react'
+import { Search, Filter, Grid3X3, List, X, Palette, MapPin, Calendar, Tag, PenBox } from 'lucide-react'
 
 interface Photo {
   id: string
@@ -399,17 +399,17 @@ export function PhotoGallery() {
                       {/* Foto Digital */}
                       <div className="flex items-center justify-between p-3 border rounded bg-white">
                         <div>
-                          <p className="font-medium text-[#5A4A3A]">Foto Digital</p>
+                          <p className="font-medium text-[#5A4A3A]">Coleçao de fotos</p>
                           <p className="text-sm text-[#8B7355]">Alta resolução para uso pessoal</p>
                         </div>
                         <div className="text-right">
-                          <p className="font-bold text-[#8B9A6B]">R$ 25,00</p>
+                          <p className="font-bold text-[#8B9A6B]">Consultar0</p>
                           <Button 
                             size="sm" 
                             className="bg-[#8B9A6B] hover:bg-[#7A8A5A]" 
                             onClick={() => handleBuyDigital(selectedPhoto)}
                           >
-                            <Download className="h-3 w-3 mr-1" />
+                            <PenBox className="h-3 w-3 mr-1" />
                             Comprar
                           </Button>
                         </div>

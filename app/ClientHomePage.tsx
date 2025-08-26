@@ -84,9 +84,9 @@ export default function ClientHomePage() {
         <HeroSection />
         <BioSection timeline={timeline} />
         <LibrarySection books={books} />
-        <PaintingsSection paintings={paintings} />
-        <GallerySection photos={photos} />
-        <CustomFrameCreator />
+        {/*  <PaintingsSection paintings={paintings} />*/}
+        {/*<GallerySection photos={photos} /> */}
+        {/* <CustomFrameCreator /> */}
         <NewsSection news={news} />
         <ContactSection />
       </main>

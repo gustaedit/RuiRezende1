@@ -189,7 +189,7 @@ export function PesquisaContent() {
       <main className="pt-8 pb-20">
         <div className="max-w-7xl mx-auto px-4">
           <header className="text-center mb-8">
-            <h1 className="text-4xl md:text-5xl font-sertao text-[#5A4A3A] mb-4">Pesquisa</h1>
+            <h1 className="text-4xl md:text-5xl font-sertao text-[#5A4A3A] mb-4">Acervo</h1>
             <p className="text-[#8B7355] text-lg">Encontre livros, quadros e fotos do acervo</p>
           </header>
 
