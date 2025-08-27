@@ -1,0 +1,10 @@
+{
+  "/_not-found/page": "/_not-found",
+  "/produto/[tipo]/[id]/page": "/produto/[tipo]/[id]",
+  "/cadastro/page": "/cadastro",
+  "/acervo/page": "/acervo",
+  "/imprensa/page": "/imprensa",
+  "/page": "/",
+  "/quadro-personalizado/page": "/quadro-personalizado",
+  "/clientes/page": "/clientes"
+}
