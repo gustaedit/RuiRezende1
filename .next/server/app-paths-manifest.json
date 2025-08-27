@@ -1,7 +1,10 @@
 {
+  "/_not-found/page": "app/_not-found/page.js",
+  "/produto/[tipo]/[id]/page": "app/produto/[tipo]/[id]/page.js",
+  "/cadastro/page": "app/cadastro/page.js",
+  "/acervo/page": "app/acervo/page.js",
+  "/imprensa/page": "app/imprensa/page.js",
   "/page": "app/page.js",
   "/quadro-personalizado/page": "app/quadro-personalizado/page.js",
-  "/cadastro/page": "app/cadastro/page.js",
-  "/clientes/page": "app/clientes/page.js",
-  "/acervo/page": "app/acervo/page.js"
+  "/clientes/page": "app/clientes/page.js"
 }
